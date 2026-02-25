@@ -1,0 +1,33 @@
+Company:
+- ID: {ID}
+- Industry: {INDUSTRY}
+- Employee range: {EMPLOYEE_RANGE}
+- Alexa rank: {ALEXA_RANK}
+- Propensity score (convert in 30 days): {P:.3f}
+
+Usage (last 30 days):
+- Actions Deals: {DEALS_30}
+- Actions Email: {EMAIL_30}
+- Users Deals: {UDEALS_30}
+- Users Email: {UEMAIL_30}
+
+Choose ONE row from the table below and return EXACT values:
+
+Behavior Pattern | Likely Stage | Playbook Focus
+High Deals + Multi-user | Pipeline-driven | Forecasting + automation
+High Email | Outreach-focused | Sequences + tracking
+High Contacts only | Early stage | Pipeline setup
+Single-user heavy | Expansion opportunity | Team invites
+Multi-user low activity | Stalled | Reactivation
+Balanced usage | High intent | Direct upgrade
+
+Return JSON with these keys:
+- behavior_pattern (from table above, EXACT value)
+- likely_stage (from table above, EXACT value)
+- playbook_focus (from table above, EXACT value)
+- urgency (one of: reach_out_now, nurture, reactivate)
+- subject_line (you MUST suggest a short email subject line for outreach, 5–10 words)
+- opening_line (you MUST suggest a one-sentence opening line for the email body)
+
+For behavior_pattern, likely_stage, and playbook_focus: use ONLY the table values EXACTLY.
+For subject_line and opening_line: write your own short, professional suggestions for this prospect.
